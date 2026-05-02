@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container */
+.product {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.product div {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.product div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.product h1 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+/* Price */
+.product p:nth-child(2) {
+  color: #27ae60;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Category */
+.product p:nth-child(3) {
+  font-size: 14px;
+  color: #888;
+  margin: 5px 0;
+}
+
+/* Stock */
+.product p:nth-child(4) {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Stock colors */
+.product p:nth-child(4)::before {
+  content: "Stock: ";
+  font-weight: bold;
+}
+
+.product p:nth-child(4) {
+  color: #2ecc71;
+}
+
+.product div:has(p:nth-child(4):contains("0")) p:nth-child(4) {
+  color: red;
+}
+
+/* Button container */
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btns button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #e0e6ed;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.btns button:hover {
+  background: #4f46e5;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Active button (important for filtering) */
+.btns button.active {
+  background: #4f46e5;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
