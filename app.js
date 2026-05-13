@@ -80,19 +80,6 @@ const product = document.querySelector('.product')
 const btns = document.querySelector('.btns')
 
 
-let category = ['all'];
-
-products.map(item =>{
-    if(!category.includes(item.category)){
-        return category.push(item.category)
-    }
-})
-category.map((item,index) =>{
-    btns.innerHTML += `
-    <button onclick='changecatagory(${index})'>${item}</button>
-    `
-})
-// console.log(category);
 
 let render = (arr) =>{
     product.innerHTML = "";
@@ -110,6 +97,19 @@ let render = (arr) =>{
 }) }
 
 render(products)
+let category = ['all'];
+
+products.map(item =>{
+    if(!category.includes(item.category)){
+        return category.push(item.category)
+    }
+})
+category.map((item,index) =>{
+    btns.innerHTML += `
+    <button onclick='changecatagory(${index})'>${item}</button>
+    `
+})
+// console.log(category);
 
 function changecatagory(index){
     console.log(category[index]);
